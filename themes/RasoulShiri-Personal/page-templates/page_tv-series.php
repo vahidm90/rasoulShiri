@@ -24,7 +24,7 @@ get_header('custom-template');
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h1><?php _ex('TV Series', 'Tier item', 'vmp-en'); ?></h1>
+            <h1><?php _ex('TV Series', 'Tier item', VM_TD); ?></h1>
         </div>
     </div>
     <div class="row no-gutters">

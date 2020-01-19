@@ -1,14 +1,14 @@
-.vmp-tooltip .tooltip-arrow {
+.vm-tooltip .tooltip-arrow {
     width: 0;
     height: 0;
     border-style: solid;
     position: absolute;
     margin: 5px;
 }
-.vmp-tooltip[x-placement^="top"] {
+.vm-tooltip[x-placement^="top"] {
     margin-bottom: 5px;
 }
-.vmp-tooltip[x-placement^="top"] .tooltip-arrow {
+.vm-tooltip[x-placement^="top"] .tooltip-arrow {
     border-width: 5px 5px 0 5px;
     border-left-color: transparent;
     border-right-color: transparent;
@@ -18,10 +18,10 @@
     margin-top: 0;
     margin-bottom: 0;
 }
-.vmp-tooltip[x-placement^="bottom"] {
+.vm-tooltip[x-placement^="bottom"] {
     margin-top: 5px;
 }
-.vmp-tooltip[x-placement^="bottom"] .tooltip-arrow
+.vm-tooltip[x-placement^="bottom"] .tooltip-arrow
 {
     border-width: 0 5px 5px 5px;
     border-left-color: transparent;
@@ -32,11 +32,11 @@
     margin-top: 0;
     margin-bottom: 0;
 }
-.vmp-tooltip[x-placement^="right"]
+.vm-tooltip[x-placement^="right"]
 {
     margin-left: 5px;
 }
-.vmp-tooltip[x-placement^="right"] .tooltip-arrow {
+.vm-tooltip[x-placement^="right"] .tooltip-arrow {
     border-width: 5px 5px 5px 0;
     border-left-color: transparent;
     border-top-color: transparent;
@@ -46,10 +46,10 @@
     margin-left: 0;
     margin-right: 0;
 }
-.vmp-tooltip[x-placement^="left"] {
+.vm-tooltip[x-placement^="left"] {
     margin-right: 5px;
 }
-.vmp-tooltip[x-placement^="left"] .tooltip-arrow {
+.vm-tooltip[x-placement^="left"] .tooltip-arrow {
     border-width: 5px 0 5px 5px;
     border-top-color: transparent;
     border-right-color: transparent;

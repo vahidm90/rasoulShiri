@@ -6,7 +6,7 @@ jQuery('document').ready(function () {
             delay: {show: 0, hide: 100},
             title: $(this).attr('title'),
             trigger: 'hover focus click',
-            template: '<div class="vmp-tooltip nav-tooltip"><div class="tooltip-arrow"></div><div class="tooltip-txt"></div></div>',
+            template: '<div class="vm-tooltip nav-tooltip"><div class="tooltip-arrow"></div><div class="tooltip-txt"></div></div>',
             innerSelector: '.tooltip-txt'
         });
     });

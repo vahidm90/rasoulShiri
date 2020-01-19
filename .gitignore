@@ -6,7 +6,7 @@
 **/uploads/**
 
 # Compiled source #
-*.vmcompiled.*
+*.vmc.*
 *.mo
 
 # Binaries #

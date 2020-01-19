@@ -21,19 +21,19 @@ get_header('home');
     </div>
     <div class="text-center tier-content">
         <h1 class="tier-head" data-aos="fade-down">
-            <a href="#home" title="Home"><?php _ex('Rasoul Shiri', 'Site Owner', 'vmp-en'); ?></a>
+            <a href="#home" title="Home"><?php _ex('Rasoul Shiri', 'Site Owner', VM_TD); ?></a>
         </h1>
         <p class="tier-text" data-aos="fade-up" id="TTEG">
-            <a href="#animation"><?php _ex('Animation', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#animation"><?php _ex('Animation', 'Tier title', VM_TD); ?></a>
         </p>
         <p class="tier-text" data-aos="fade-up">
-            <a href="#sketch"><?php _ex('Sketch', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#sketch"><?php _ex('Sketch', 'Tier title', VM_TD); ?></a>
         </p>
         <p class="tier-text" data-aos="fade-up">
-            <a href="#char-design"><?php _ex('Character Design', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#char-design"><?php _ex('Character Design', 'Tier title', VM_TD); ?></a>
         </p>
         <p class="tier-text" data-aos="fade-up">
-            <a href="#short-animation"><?php _ex('Short Animation', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#short-animation"><?php _ex('Short Animation', 'Tier title', VM_TD); ?></a>
         </p>
     </div>
 </div>
@@ -54,39 +54,39 @@ get_header('home');
     </nav>
     <div class="tier-content">
         <h2 class="tier-head" data-aos="fade-down">
-            <a href="#animation"><?php _ex('Animation', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#animation"><?php _ex('Animation', 'Tier title', VM_TD); ?></a>
         </h2>
         <div class="tier-items container-fluid">
             <div class="row no-gutters">
                 <div class="col-lg-4">
-                    <a href="<?php echo home_url('tv-series'); ?>" title="<?php _ex('TV Series', 'Tier item', 'vmp-en'); ?>">
+                    <a href="<?php echo home_url('tv-series'); ?>" title="<?php _ex('TV Series', 'Tier item', VM_TD); ?>">
                         <div class="tier-item card" data-aos="flip-right">
-                            <img class="card-img-top" src="<?php echo $path; ?>/img/portfolio-image_09.jpg" alt="<?php _ex('TV Series', 'Tier item', 'vmp-en'); ?>">
+                            <img class="card-img-top" src="<?php echo $path; ?>/img/portfolio-image_09.jpg" alt="<?php _ex('TV Series', 'Tier item', VM_TD); ?>">
                             <div class="card-body">
-                                <h3 class="card-title"><?php _ex('TV Series', 'Tier item', 'vmp-en'); ?></h3>
-                                <p class="card-text"><?php _ex('Over 1000 minutes of animated TV series', 'Tier text', 'vmp-en'); ?></p>
+                                <h3 class="card-title"><?php _ex('TV Series', 'Tier item', VM_TD); ?></h3>
+                                <p class="card-text"><?php _ex('Over 1000 minutes of animated TV series', 'Tier text', VM_TD); ?></p>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4">
-                    <a href="<?php echo home_url('animated-short-series'); ?>" title="<?php _ex('Animated Short Series', 'Tier item', 'vmp-en'); ?>">
+                    <a href="<?php echo home_url('animated-short-series'); ?>" title="<?php _ex('Animated Short Series', 'Tier item', VM_TD); ?>">
                         <div class="tier-item card" data-aos="flip-right">
-                            <img class="card-img-top" src="<?php echo $path; ?>/img/portfolio-image_03.jpg" alt="<?php _ex('Animated Short Series', 'Tier item', 'vmp-en'); ?>">
+                            <img class="card-img-top" src="<?php echo $path; ?>/img/portfolio-image_03.jpg" alt="<?php _ex('Animated Short Series', 'Tier item', VM_TD); ?>">
                             <div class="card-body">
-                                <h3 class="card-title"><?php _ex('Animated Short Series', 'Tier item', 'vmp-en'); ?></h3>
-                                <p class="card-text"><?php _ex('Under-2-minute animated short series for online media and TV', 'Tier text', 'vmp-en'); ?></p>
+                                <h3 class="card-title"><?php _ex('Animated Short Series', 'Tier item', VM_TD); ?></h3>
+                                <p class="card-text"><?php _ex('Under-2-minute animated short series for online media and TV', 'Tier text', VM_TD); ?></p>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4">
-                    <a href="<?php echo home_url('tv-commercials'); ?>" title="<?php _ex('TV Commercials', 'Tier item', 'vmp-en'); ?>">
+                    <a href="<?php echo home_url('tv-commercials'); ?>" title="<?php _ex('TV Commercials', 'Tier item', VM_TD); ?>">
                         <div class="tier-item card" data-aos="flip-right">
-                            <img class="card-img-top" src="<?php echo $path; ?>/img/portfolio-image_01.jpg" alt="<?php _ex('TV Commercials', 'Tier item', 'vmp-en'); ?>">
+                            <img class="card-img-top" src="<?php echo $path; ?>/img/portfolio-image_01.jpg" alt="<?php _ex('TV Commercials', 'Tier item', VM_TD); ?>">
                             <div class="card-body">
-                                <h3 class="card-title"><?php _ex('TV Commercials', 'Tier item', 'vmp-en'); ?></h3>
-                                <p class="card-text"><?php _ex('TV commercials for events and mobile apps ads', 'Tier text', 'vmp-en'); ?></p>
+                                <h3 class="card-title"><?php _ex('TV Commercials', 'Tier item', VM_TD); ?></h3>
+                                <p class="card-text"><?php _ex('TV commercials for events and mobile apps ads', 'Tier text', VM_TD); ?></p>
                             </div>
                         </div>
                     </a>
@@ -98,7 +98,7 @@ get_header('home');
 <div class="tier" id="sketch">
     <div class="tier-content">
         <h2 class="tier-head" data-aos="fade-down">
-            <a href="#sketch"><?php _ex('Sketch', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#sketch"><?php _ex('Sketch', 'Tier title', VM_TD); ?></a>
         </h2>
         <div class="container tier-items">
             <div class="row">
@@ -124,7 +124,7 @@ get_header('home');
 <div class="tier" id="char-design">
     <div class="tier-content">
         <h2 class="tier-head" data-aos="fade-down">
-            <a href="#char-design"><?php _ex('Character Design', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#char-design"><?php _ex('Character Design', 'Tier title', VM_TD); ?></a>
         </h2>
         <div class="container">
             <div class="row">
@@ -141,7 +141,7 @@ get_header('home');
 <div class="tier" id="short-animation">
     <div class="tier-content">
         <h2 class="tier-head" data-aos="fade-down">
-            <a href="#short-animation"><?php _ex('Short Animation', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#short-animation"><?php _ex('Short Animation', 'Tier title', VM_TD); ?></a>
         </h2>
         <div id="short-animation-slider" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -206,18 +206,18 @@ get_header('home');
 <div class="tier" id="about">
     <div class="text-center tier-content">
         <h2 class="tier-head">
-            <a href="#about"><?php _ex('About', 'Tier title', 'vmp-en'); ?></a>
+            <a href="#about"><?php _ex('About', 'Tier title', VM_TD); ?></a>
         </h2>
         <p class="tier-text">
             <?php
-            _ex('Born in 1984 in Hamadan, Rasoul Shiri has studied Graphic Design and has been a self-taught animator since 1998. ', 'Bio text', 'vmp-en');
-            _ex('He has been making short animation films independently since 2001. ', 'Bio text', 'vmp-en');
-            _ex('He\'s been a freelance artist since 2002.', 'Bio text', 'vmp-en');
+            _ex('Born in 1984 in Hamadan, Rasoul Shiri has studied Graphic Design and has been a self-taught animator since 1998. ', 'Bio text', VM_TD);
+            _ex('He has been making short animation films independently since 2001. ', 'Bio text', VM_TD);
+            _ex('He\'s been a freelance artist since 2002.', 'Bio text', VM_TD);
             ?>
         </p>
         <h3 class="mt-5" data-aos="fade-down">
             <a href="<?php echo home_url('filmography'); ?>">
-<?php _ex('Filmography', 'Tier text', 'vmp-en'); ?>
+<?php _ex('Filmography', 'Tier text', VM_TD); ?>
             </a>
         </h3>
     </div>
@@ -226,7 +226,7 @@ get_header('home');
     <div class="text-center tier-content">
         <div class="tier-head-div">
             <h2 class="tier-head">
-                <a href="#contact"><?php _ex('Contact', 'Tier title', 'vmp-en'); ?></a>
+                <a href="#contact"><?php _ex('Contact', 'Tier title', VM_TD); ?></a>
             </h2>
             <p class="tier-text contact-info">
                 <span class="vmp-icon vmp-icon-phone"></span><span class="contact-phone">+989199209012</span>

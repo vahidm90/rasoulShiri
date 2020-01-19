@@ -25,7 +25,7 @@ get_header('custom-template');
     <div class="container tier-content">
         <div class="row">
             <div class="col-12">
-                <h1><?php _ex('TV Commercials', 'Tier item', 'vmp-en'); ?></h1>
+                <h1><?php _ex('TV Commercials', 'Tier item', VM_TD); ?></h1>
             </div>
             <div class="col-md-6">
                 <div class="img-div d-md-flex align-items-md-center">
