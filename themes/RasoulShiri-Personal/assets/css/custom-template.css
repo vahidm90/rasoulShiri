@@ -10,7 +10,7 @@ h1 {
     z-index: 0;
 }
 .card-title {
-    font-family: vmpBigJohn, sans-serif !important;
+    font-family: bigJohn, sans-serif !important;
     text-align:  center;
 }
 .card-title span {

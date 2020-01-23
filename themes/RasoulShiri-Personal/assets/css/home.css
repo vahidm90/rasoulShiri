@@ -10,7 +10,7 @@
     margin-top: -8px;
 }
 #home .tier-text {
-    font-family: vmpBigJohn, sans-serif;
+    font-family: bigJohn, sans-serif !important;
     margin-top: 1em;
     font-weight:  800;
 }

@@ -10,7 +10,7 @@ function vm_css_js_front_end() {
 
     wp_deregister_script( 'jquery' );
 
-    if (VM_IS_DEV) :
+    if ( VM_IS_DEV ) :
             vm_load_dev_css_js();
     else :
             vm_load_production_css_js();
@@ -35,7 +35,12 @@ function vm_load_dev_css_js() {
     wp_enqueue_script('jquery-js', "$path/js/jquery-3.4.1.min.js", array(), '3.4.1', true);
     $dep_js [] = 'jquery-js';
 
-    wp_enqueue_style('vmp-bootstrap', "$path/css/bootstrap.min.css");
+    wp_enqueue_style('bootstrap', "$path/bootstrap-4.4.1-dist/bootstrap.min.css", array(), '4.4.1' );
+    $dep_css [] = 'bootstrap';
+
+    wp_enqueue_script( 'bootstrap-js', "$path/bootstrap-4.4.1-dist/bootstrap.min.js", $dep_js, '4.4.1', true);
+    $dep_js [] = 'bootstrap-js';
+
     wp_enqueue_style('vmp-aos', "$path/css/aos.min.css");
     wp_enqueue_style('vmp-basic', "$path/css/basic.css");
     wp_enqueue_style('vmp-icons', "$path/css/icons.css");
@@ -84,19 +89,27 @@ function vm_load_production_css_js() {
 
     $path    = get_template_directory_uri() . '/assets';
     $dep_css = $dep_js = array();
-    add_filter( 'script_loader_tag', 'vm_add_sri_attributes', 10, 2 );
-    add_filter( 'style_loader_tag', 'vm_add_sri_attributes', 10, 2 );
 
-    wp_enqueue_script( 'jquery-js', 'http://code.jquery.com/jquery-3.4.1.min.js', array(), '3.4.1', true );
+    // These will use the 'vm_add_sri_attributes' function to add SRI attributes to files obtained from CDNs.
+//    add_filter( 'script_loader_tag', 'vm_add_sri_attributes', 10, 2 );
+//    add_filter( 'style_loader_tag', 'vm_add_sri_attributes', 10, 2 );
+
+    wp_enqueue_script( 'jquery-js', 'https://lib.arvancloud.com/ar/jquery/3.4.1/jquery.min.js', array(), '3.4.1', true );
     $dep_js []= 'jquery-js';
 
     wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1' );
     $dep_css []= 'bootstrap';
 
-    wp_enqueue_script( 'bootstrap-js', 'https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js', $dep_js, null, true );
+    wp_enqueue_script( 'bootstrap-js', 'https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js', $dep_js, '4.4.1', true );
     $dep_js []= 'bootstrap-js';
 
-    wp_enqueue_style( 'basic', "$path/css/basic.vmcompiled.min.css", $dep_css, '1.0' );
+    wp_enqueue_style( 'aos', 'https://lib.arvancloud.com/ar/aos/2.3.4/aos.css', $dep_css, '2.3.4' );
+    $dep_css []= 'aos';
+
+    wp_enqueue_script( 'aos-js', 'https://lib.arvancloud.com/ar/aos/2.3.4/aos.js', $dep_js, '2.3.4', true );
+    $dep_js []= 'aos-js';
+
+    wp_enqueue_style( 'basic', "$path/css/basic.vmc.min.css", $dep_css, '1.0' );
     $dep_css [] = 'basic';
 
     if ( is_front_page() ) :
@@ -107,37 +120,29 @@ function vm_load_production_css_js() {
 
 }
 
-
+/**
+ * Add SRI attributes to css/js files from CDNs.
+ *
+ * @param $html   string HTML markup for the css/js file
+ * @param $handle string Unique file handle/ID
+ *
+ * @return        string HTML markup for the css/js file with SRI attributes
+ *
+ */
 function vm_add_sri_attributes ( $html, $handle ) {
 
     switch ( $handle ) :
         default :
             return $html;
             break;
-        case 'jquery-js' :
-            $replace = 'integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"';
-            $tag = '></script>';
-            break;
-        case 'bootstrap' :
-            $replace = 'integrity="sha384-vus3nQHTD+5mpDiZ4rkEPlnkcyTP+49BhJ4wJeJunw06ZAp+wzzeBPUXr42fi8If" crossorigin="anonymous"';
-            $tag = '/>';
-            break;
-        case 'bootstrap-js' :
-            $replace = 'integrity="sha384-a9xOd0rz8w0J8zqj1qJic7GPFfyMfoiuDjC9rqXlVOcGO/dmRqzMn34gZYDTel8k" crossorigin="anonymous"';
-            $tag = '></script>';
-            break;
     endswitch;
 
-    return str_replace( $tag, " $replace$tag", $html );
-
 }
 
-function vm_load_css_js() {
 
-}
-
-add_action('wp_enqueue_scripts', 'vm_load_css_js');
-
+/**
+ *
+ */
 function front_page_inline_js() {
     if (!is_front_page()) :
         return;
