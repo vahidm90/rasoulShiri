@@ -3,7 +3,7 @@
  *  Template Name: Animated Short Series
  */
 
-$path = get_template_directory_uri() . '/assets';
+$path = get_template_directory_uri() . '/assets/bin';
 
 get_header('custom-template');
 ?>
@@ -80,4 +80,5 @@ get_header('custom-template');
     </div>
 </div>
 <?php
+
 get_footer('custom-template');

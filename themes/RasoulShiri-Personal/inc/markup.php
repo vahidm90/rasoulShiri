@@ -1,16 +1,27 @@
 <?php
 
 
-function vm_remove_wp_clues () {
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-    remove_action( 'wp_head', 'wp_resource_hints', 2 );
-    remove_action( 'wp_head', 'rest_output_link_wp_head' );
-    remove_action( 'wp_head', 'rsd_link' );
-    remove_action( 'wp_head', 'wlwmanifest_link' );
-    add_filter( 'the_generator', '__return_false' );
+/**
+ * Set HTML <title> tag for the document.
+ *
+ * @param  $title string Default document title
+ *
+ * @return        string Document title
+ *
+ */
+function vm_set_doc_title( $title ) {
+
+	if ( is_home() ) :
+		return get_bloginfo() . ' - ' . get_bloginfo( 'description' );
+	elseif ( is_page() ) :
+		global $post;
+		return $post->post_title . ' | ' . get_bloginfo();
+	xdebug_break();
+	endif;
+
+
+	return $title;
+
 }
 
-add_action( 'init', 'vm_remove_wp_clues' );
-
-
+add_filter( 'pre_get_document_title', 'vm_set_doc_title' );

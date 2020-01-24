@@ -7,5 +7,6 @@ define( 'VM_IS_DEV', ( false === strpos( $_SERVER['SERVER_NAME'], VM_DEV_ADDRESS
 define( 'VM_TD', 'VM-TD' );
 
 // Files
+require get_template_directory() . '/inc/init.php';
 require get_template_directory() . '/inc/markup.php';
 require get_template_directory() . '/inc/js_css.php';

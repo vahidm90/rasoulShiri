@@ -3,8 +3,6 @@
  *  Template Name: Filmography
  */
 
-$path = get_template_directory_uri() . '/assets';
-
 get_header( 'custom-template' );
 
 ?>

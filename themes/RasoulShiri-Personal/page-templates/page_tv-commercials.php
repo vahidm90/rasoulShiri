@@ -3,7 +3,7 @@
  *  Template Name: TV Commercials
  */
 
-$path = get_template_directory_uri() . '/assets';
+$path = get_template_directory_uri() . '/assets/bin';
 
 get_header('custom-template');
 ?>
