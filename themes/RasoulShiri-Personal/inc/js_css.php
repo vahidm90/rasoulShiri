@@ -65,10 +65,11 @@ function vm_load_dev_css_js() {
 			'home-js',
 			'LOC_VARS',
 			array(
-				'url'     => get_template_directory_uri() . '/assets/securimage',
-				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-				'nonce'   => wp_create_nonce( 'vm_contact_nonce' ),
-				'retry'   => _x( 'Try Again!', 'Captcha error', VM_TD ),
+				'themeUrl' => get_template_directory_uri(),
+				'ajaxUrl'  => admin_url( 'admin-ajax.php' ),
+				'siteUrl'  => home_url(),
+				'nonce'    => wp_create_nonce( 'vm_contact_nonce' ),
+				'retry'    => _x( 'Try Again!', 'Captcha error', VM_TD ),
 			)
 		);
 		wp_enqueue_script( 'home-js' );

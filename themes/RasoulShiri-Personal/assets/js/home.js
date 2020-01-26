@@ -1,14 +1,15 @@
+console.log(LOC_VARS);
 function reloadCaptcha()
 {
     console.log('reloading captcha');
-    $('#siimage').prop('src', LOC_VARS.url + '/securimage_show.php?sid=' + Math.random());
+    $('#siimage').prop('src', LOC_VARS.themeUrl + '/assets/securimage/securimage_show.php?sid=' + Math.random());
 }
 
 function processForm()
 {
     console.log('processing form!');
     $.ajax({
-        url: '/index.php',
+        url: LOC_VARS.themeUrl + '/index.php',
         type: 'POST',
         async: false,
         cache: false,
@@ -28,15 +29,13 @@ function processForm()
                 data: { action: 'vm-display-contact-info', security: LOC_VARS.nonce },
                 dataType: 'html',
                 success: function (content) {
-                    console.log('created')
+                    console.log('displaying content');
                     $('#contact_captcha').hide(100);
                     $('#contact .tier-head').after(content);
                 },
             });
         } else {
-            console.log('captcha ajax success');
-            console.log('retrieved data:');
-            console.log(data);
+            console.log('captcha failed!');
             alert(LOC_VARS.retry);
             if (data.message.indexOf('Incorrect security code') >= 0) {
                 jQuery('#captcha_code').val('');
