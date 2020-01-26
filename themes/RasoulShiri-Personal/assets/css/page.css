@@ -60,7 +60,7 @@ h1 {
 }
 
 .content .work:after {
-    background: url(../img/film.png) center/cover no-repeat, #fff;
+    background: url(../bin/img/film.png) center/cover no-repeat, #fff;
     content: " ";
     width: 100%;
     height: 100%;

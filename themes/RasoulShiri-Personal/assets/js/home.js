@@ -1,26 +1,46 @@
 function reloadCaptcha()
 {
-    jQuery('#siimage').prop('src', './securimage_show.php?sid=' + Math.random());
+    console.log('reloading captcha');
+    $('#siimage').prop('src', LOC_VARS.url + '/securimage_show.php?sid=' + Math.random());
 }
 
 function processForm()
 {
-    jQuery.ajax({
-        url: 'http://rasoulshiri.test/',
+    console.log('processing form!');
+    $.ajax({
+        url: '/index.php',
         type: 'POST',
-        data: jQuery('#contact_captcha').serialize(),
+        async: false,
+        cache: false,
+        data: $('#contact_captcha').serialize(),
         dataType: 'json'
     }).done(function(data) {
+        console.log('captcha ajax success');
+        console.log('retrieved data:');
+        console.log(data);
         if (data.error === 0) {
-            jQuery('#success_message').show();
-            jQuery('#contact_form')[0].reset();
-            reloadCaptcha();
-            setTimeout("jQuery('#success_message').fadeOut()", 12000);
+            console.log('captcha passed!');
+            $.ajax({
+                url: LOC_VARS.ajaxUrl,
+                async: false,
+                cache: false,
+                type: 'POST',
+                data: { action: 'vm-display-contact-info', security: LOC_VARS.nonce },
+                dataType: 'html',
+                success: function (content) {
+                    console.log('created')
+                    $('#contact_captcha').hide(100);
+                    $('#contact .tier-head').after(content);
+                },
+            });
         } else {
-            alert("There was an error with your submission.\n\n" + data.message);
-
+            console.log('captcha ajax success');
+            console.log('retrieved data:');
+            console.log(data);
+            alert(LOC_VARS.retry);
             if (data.message.indexOf('Incorrect security code') >= 0) {
                 jQuery('#captcha_code').val('');
+                reloadCaptcha();
             }
         }
     });
