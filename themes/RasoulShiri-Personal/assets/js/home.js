@@ -8,19 +8,30 @@ function reloadCaptcha()
 function processForm()
 {
     console.log('processing form!');
+    console.log($('#contact_captcha').serialize());
     $.ajax({
-        url: LOC_VARS.themeUrl + '/index.php',
+        url: LOC_VARS.siteUrl + '/index.php',
         type: 'POST',
         async: false,
         cache: false,
         data: $('#contact_captcha').serialize(),
-        dataType: 'json'
+        dataType: 'json',
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log('captcha ajax failed!');
+            console.log('jqxhr');
+            console.log(jqXHR);
+            console.log('textstatus');
+            console.log(textStatus);
+            console.log('errorThrown');
+            console.log(errorThrown);
+        }
     }).done(function(data) {
         console.log('captcha ajax success');
         console.log('retrieved data:');
         console.log(data);
         if (data.error === 0) {
             console.log('captcha passed!');
+            console.log('retrieving content!');
             $.ajax({
                 url: LOC_VARS.ajaxUrl,
                 async: false,

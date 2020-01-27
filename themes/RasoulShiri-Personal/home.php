@@ -409,7 +409,7 @@ get_header( 'home' );
                 <h2 class="tier-head">
 					<?php _ex( 'Contact', 'Tier title', VM_TD ); ?>
                 </h2>
-                <form id="contact_captcha" method="post" onsubmit="return processForm()" action="<?php echo home_url(); ?>/index.php">
+                <form id="contact_captcha" method="post" onsubmit="return processForm()" action="">
 					<?php
 
 					require_once get_template_directory() . '/assets/securimage/securimage.php';
