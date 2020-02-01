@@ -1,9 +1,8 @@
 <?php
-session_start();
-
-$path = get_template_directory_uri();
 
 get_header( 'home' );
+
+$path = get_template_directory_uri();
 
 ?>
     <nav id="dynamic-nav" class="navbar d-none d-lg-flex" data-aos="fade-left">
@@ -85,7 +84,8 @@ get_header( 'home' );
                         <a href="<?php echo home_url( 'tv-series' ); ?>"
                            title="<?php _ex( 'TV Series', 'Tier item', VM_TD ); ?>">
                             <div class="tier-item card" data-aos="flip-right">
-                                <img class="card-img-top" src="<?php echo $path; ?>/assets/bin/img/portfolio-image_09.jpg"
+                                <img class="card-img-top"
+                                     src="<?php echo $path; ?>/assets/bin/img/portfolio-image_09.jpg"
                                      alt="<?php _ex( 'TV Series', 'Tier item', VM_TD ); ?>">
                                 <div class="card-body">
                                     <h3 class="card-title"><?php _ex( 'TV Series', 'Tier item', VM_TD ); ?></h3>
@@ -98,7 +98,8 @@ get_header( 'home' );
                         <a href="<?php echo home_url( 'animated-short-series' ); ?>"
                            title="<?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?>">
                             <div class="tier-item card" data-aos="flip-right">
-                                <img class="card-img-top" src="<?php echo $path; ?>/assets/bin/img/portfolio-image_03.jpg"
+                                <img class="card-img-top"
+                                     src="<?php echo $path; ?>/assets/bin/img/portfolio-image_03.jpg"
                                      alt="<?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?>">
                                 <div class="card-body">
                                     <h3 class="card-title"><?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?></h3>
@@ -111,7 +112,8 @@ get_header( 'home' );
                         <a href="<?php echo home_url( 'tv-commercials' ); ?>"
                            title="<?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?>">
                             <div class="tier-item card" data-aos="flip-right">
-                                <img class="card-img-top" src="<?php echo $path; ?>/assets/bin/img/portfolio-image_01.jpg"
+                                <img class="card-img-top"
+                                     src="<?php echo $path; ?>/assets/bin/img/portfolio-image_01.jpg"
                                      alt="<?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?>">
                                 <div class="card-body">
                                     <h3 class="card-title"><?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?></h3>
@@ -134,7 +136,8 @@ get_header( 'home' );
                             <a href="<?php echo home_url( 'tv-series' ); ?>"
                                title="<?php _ex( 'TV Series', 'Tier item', VM_TD ); ?>">
                                 <div class="tier-item card">
-                                    <img class="card-img-top" src="<?php echo $path; ?>/assets/bin/img/portfolio-image_09.jpg"
+                                    <img class="card-img-top"
+                                         src="<?php echo $path; ?>/assets/bin/img/portfolio-image_09.jpg"
                                          alt="<?php _ex( 'TV Series', 'Tier item', VM_TD ); ?>">
                                     <div class="card-body">
                                         <h3 class="card-title"><?php _ex( 'TV Series', 'Tier item', VM_TD ); ?></h3>
@@ -147,7 +150,8 @@ get_header( 'home' );
                             <a href="<?php echo home_url( 'animated-short-series' ); ?>"
                                title="<?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?>">
                                 <div class="tier-item card">
-                                    <img class="card-img-top" src="<?php echo $path; ?>/assets/bin/img/portfolio-image_03.jpg"
+                                    <img class="card-img-top"
+                                         src="<?php echo $path; ?>/assets/bin/img/portfolio-image_03.jpg"
                                          alt="<?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?>">
                                     <div class="card-body">
                                         <h3 class="card-title"><?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?></h3>
@@ -160,7 +164,8 @@ get_header( 'home' );
                             <a href="<?php echo home_url( 'tv-commercials' ); ?>"
                                title="<?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?>">
                                 <div class="tier-item card">
-                                    <img class="card-img-top" src="<?php echo $path; ?>/assets/bin/img/portfolio-image_01.jpg"
+                                    <img class="card-img-top"
+                                         src="<?php echo $path; ?>/assets/bin/img/portfolio-image_01.jpg"
                                          alt="<?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?>">
                                     <div class="card-body">
                                         <h3 class="card-title"><?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?></h3>
@@ -183,17 +188,20 @@ get_header( 'home' );
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card tier-item" data-aos="flip-left">
-                            <img src="<?php echo $path; ?>/assets/bin/img/sketch01.png" class="my-lg-auto d-block w-100">
+                            <img src="<?php echo $path; ?>/assets/bin/img/sketch01.png"
+                                 class="my-lg-auto d-block w-100">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card tier-item" data-aos="flip-left">
-                            <img src="<?php echo $path; ?>/assets/bin/img/sketch02.png" class="my-lg-auto d-block w-100">
+                            <img src="<?php echo $path; ?>/assets/bin/img/sketch02.png"
+                                 class="my-lg-auto d-block w-100">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card tier-item" data-aos="flip-left">
-                            <img src="<?php echo $path; ?>/assets/bin/img/sketch03.png" class="my-lg-auto d-block w-100">
+                            <img src="<?php echo $path; ?>/assets/bin/img/sketch03.png"
+                                 class="my-lg-auto d-block w-100">
                         </div>
                     </div>
                 </div>
@@ -206,17 +214,20 @@ get_header( 'home' );
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="card tier-item">
-                                <img src="<?php echo $path; ?>/assets/bin/img/sketch01.png" class="my-lg-auto d-block w-100">
+                                <img src="<?php echo $path; ?>/assets/bin/img/sketch01.png"
+                                     class="my-lg-auto d-block w-100">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="card tier-item">
-                                <img src="<?php echo $path; ?>/assets/bin/img/sketch02.png" class="my-lg-auto d-block w-100">
+                                <img src="<?php echo $path; ?>/assets/bin/img/sketch02.png"
+                                     class="my-lg-auto d-block w-100">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="card tier-item">
-                                <img src="<?php echo $path; ?>/assets/bin/img/sketch03.png" class="my-lg-auto d-block w-100">
+                                <img src="<?php echo $path; ?>/assets/bin/img/sketch03.png"
+                                     class="my-lg-auto d-block w-100">
                             </div>
                         </div>
                     </div>
@@ -232,10 +243,12 @@ get_header( 'home' );
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="<?php echo $path; ?>/assets/bin/img/char-design01.png" class="w-100" data-aos="zoom-in">
+                        <img src="<?php echo $path; ?>/assets/bin/img/char-design01.png" class="w-100"
+                             data-aos="zoom-in">
                     </div>
                     <div class="col-lg-6">
-                        <img src="<?php echo $path; ?>/assets/bin/img/char-design02.png" class="w-100" data-aos="zoom-in-up">
+                        <img src="<?php echo $path; ?>/assets/bin/img/char-design02.png" class="w-100"
+                             data-aos="zoom-in-up">
                     </div>
                 </div>
             </div>
@@ -410,10 +423,12 @@ get_header( 'home' );
 					<?php _ex( 'Contact', 'Tier title', VM_TD ); ?>
                 </h2>
                 <form id="contact_captcha" method="post" onsubmit="return processForm()" action="">
+                    <img id="captcha" src="<?php echo $path; ?>/assets/securimage/securimage_show.php"
+                         alt="CAPTCHA Image"/>
+                    <input type="text" name="captcha_code" size="10" maxlength="6"/>
+                    <a href="#" onclick="document.getElementById('captcha').src = '<?php echo $path; ?>/assets/securimage/securimage_show.php?' + Math.random(); return false">[Different Image ]</a>
 					<?php
-
-					require_once get_template_directory() . '/assets/securimage/securimage.php';
-					echo Securimage::getCaptchaHtml( array( 'input_name' => 'ct_captcha' ) );
+                    //TODO: add icon/translatable strings for captcha image change button.
 					//TODO: add no-script contact information images.
 					?>
                     <input type="submit" value="<?php _ex( 'Done', 'Submit button text', VM_TD ); ?>"/>
@@ -428,6 +443,7 @@ get_header( 'home' );
     </div>
 <?php
 get_footer( 'home' );
+
 
 //TODO: create custom options page to set background images, number of front-page tiers, their names, IDs, etc.
 //TODO: create options to set site owner info.

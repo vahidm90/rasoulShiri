@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php //TODO: update tags here to check development environment ?>
 <html>
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->

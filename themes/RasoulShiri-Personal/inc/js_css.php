@@ -175,8 +175,68 @@ function front_page_inline_js() {
 		return;
 	endif;
 
+	$path = get_template_directory_uri();
+
 	?>
     <script>
+        function reloadCaptcha() {
+            console.log('reloading captcha');
+            $('#siimage').prop('src', '<?php echo $path; ?>/assets/securimage/securimage_show.php?sid=' + Math.random());
+        }
+
+        function processForm() {
+            console.log('processing form!');
+            console.log($('#contact_captcha').serialize());
+            $.ajax({
+                url: '<?php echo $path; ?>/contact-captcha.php',
+                type: 'POST',
+                data: $('#contact_captcha').serialize(),
+                dataType: 'json',
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log('captcha ajax failed!');
+                    console.log('jqxhr');
+                    console.log(jqXHR);
+                    console.log('textstatus');
+                    console.log(textStatus);
+                    console.log('errorThrown');
+                    console.log(errorThrown);
+                }
+            }).done(function (data) {
+                console.log('captcha ajax success');
+                console.log('retrieved data:');
+                console.log(data);
+                if (data.error === 0) {
+                    console.log('captcha passed!');
+                    console.log('retrieving content!');
+                    $.ajax({
+                        url: '<?php echo admin_url( 'admin-ajax.php' ); ?>',
+                        async: false,
+                        cache: false,
+                        type: 'POST',
+                        data: {
+                            action: 'vm-display-contact-info',
+                            security: <?php echo wp_create_nonce( 'vm_contact_nonce' ); ?>
+                        },
+                        dataType: 'html',
+                        success: function (content) {
+                            console.log('displaying content');
+                            $('#contact_captcha').hide(100);
+                            $('#contact .tier-head').after(content);
+                        },
+                    });
+                } else {
+                    console.log('captcha failed!');
+                    alert(<?php _ex( 'Try Again!', 'Captcha error', VM_TD ); ?>);
+                    if (data.message.indexOf('Incorrect security code') >= 0) {
+                        jQuery('#captcha_code').val('');
+                        reloadCaptcha();
+                    }
+                }
+            });
+
+            return false;
+        }
+
         $(window).on('activate.bs.scrollspy', function (e) {
             var $topBar = $('#static-top-bar');
             $('.nav-link', $topBar).removeClass('active');
