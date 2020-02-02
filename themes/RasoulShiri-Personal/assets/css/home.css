@@ -78,6 +78,11 @@
     margin: 5%;
 }
 
+/* Contact Tier */
+#contact .vm-icon {
+    margin-right: 4px;
+}
+
 /*
     Conditionals
  */

@@ -7,13 +7,13 @@ $path = get_template_directory_uri();
 ?>
     <nav id="dynamic-nav" class="navbar d-none d-lg-flex" data-aos="fade-left">
         <div class="nav-container">
-            <a class="vmp-icon-radio-unchecked nav-link" title="Home" href="#home"></a>
-            <a class="vmp-icon-radio-unchecked nav-link" title="Animation" href="#animation"></a>
-            <a class="vmp-icon-radio-unchecked nav-link" title="Sketch" href="#sketch"></a>
-            <a class="vmp-icon-radio-unchecked nav-link" title="Character Design" href="#char-design"></a>
-            <a class="vmp-icon-radio-unchecked nav-link" title="Short Animation" href="#short-animation"></a>
-            <a class="vmp-icon-radio-unchecked nav-link" title="About" href="#about"></a>
-            <a class="vmp-icon-radio-unchecked nav-link" title="Contact" href="#contact"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Home" href="#home"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Animation" href="#animation"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Sketch" href="#sketch"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Character Design" href="#char-design"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Short Animation" href="#short-animation"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="About" href="#about"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Contact" href="#contact"></a>
         </div>
     </nav>
     <div class="tier" id="home">
@@ -271,14 +271,14 @@ $path = get_template_directory_uri();
     </div>
     <div class="tier" id="short-animation">
         <div class="tier-content">
-            <noscript>
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="tier-head">
-							<?php _ex( 'Short Animation', 'Tier title', VM_TD ); ?>
-                        </h2>
-                    </div>
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="tier-head">
+				        <?php _ex( 'Short Animation', 'Tier title', VM_TD ); ?>
+                    </h2>
                 </div>
+            </div>
+            <noscript>
                 <div class="row">
                     <div class="col-12 col-md-6 col-xl-3">
                         <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_12.jpg" class="d-block w-100"
@@ -425,7 +425,7 @@ $path = get_template_directory_uri();
                 <form id="contact_captcha" method="post" onsubmit="return processForm()" action="">
                     <img id="captcha" src="<?php echo $path; ?>/assets/securimage/securimage_show.php"
                          alt="CAPTCHA Image"/>
-                    <input type="text" name="captcha_code" size="10" maxlength="6"/>
+                    <input type="text" name="captcha_code" size="10" maxlength="8" id="captcha_code"/>
                     <a href="#" onclick="document.getElementById('captcha').src = '<?php echo $path; ?>/assets/securimage/securimage_show.php?' + Math.random(); return false">[Different Image ]</a>
 					<?php
                     //TODO: add icon/translatable strings for captcha image change button.
@@ -435,7 +435,7 @@ $path = get_template_directory_uri();
                 </form>
                 <p class="tier-text contact-info">
                     <a href="https://www.instagram.com/shirirasool">
-                        <span class="vmp-icon vmp-icon-instagram"></span><span class="contact-insta">shirirasool</span>
+                        <span class="vm-icon vmi-instagram"></span><span class="contact-insta">shirirasool</span>
                     </a>
                 </p>
             </div>
