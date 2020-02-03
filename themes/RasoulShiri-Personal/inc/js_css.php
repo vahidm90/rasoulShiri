@@ -63,19 +63,7 @@ function vm_load_dev_css_js() {
 		$dep_css [] = 'landing';
 
 		wp_enqueue_style( 'home', "$path/css/home.css", $dep_css, '1.0' );
-		wp_register_script( 'home-js', "$path/js/home.js", array( 'jquery-js' ), '1.0' );
-		wp_localize_script(
-			'home-js',
-			'LOC_VARS',
-			array(
-				'themeUrl' => get_template_directory_uri(),
-				'ajaxUrl'  => admin_url( 'admin-ajax.php' ),
-				'siteUrl'  => home_url(),
-				'nonce'    => wp_create_nonce( 'vm_contact_nonce' ),
-				'retry'    => _x( 'Try Again!', 'Captcha error', VM_TD ),
-			)
-		);
-		wp_enqueue_script( 'home-js' );
+		wp_enqueue_script( 'home-js', "$path/js/home.js", array( 'jquery-js' ), '1.0', true );
 
     elseif ( is_page() ) :
 
@@ -124,10 +112,13 @@ function vm_load_production_css_js() {
 		$dep_js [] = 'tippy-js';
 
 		wp_enqueue_style( 'aos', 'https://lib.arvancloud.com/ar/aos/2.3.4/aos.css', $dep_css, '2.3.4' );
-		$dep_css = 'aos';
+		$dep_css [] = 'aos';
 
 		wp_enqueue_script( 'aos-js', 'https://lib.arvancloud.com/ar/aos/2.3.4/aos.js', $dep_js, '2.3.4', true );
-		$dep_js = 'aos-js';
+		$dep_js [] = 'aos-js';
+
+		wp_enqueue_style( 'landing', "$path/css/landing.vmc.min.css", $dep_css, '1.0' );
+		$dep_css [] = 'landing';
 
 		wp_enqueue_style( 'home', "$path/css/home.vmc.min.css", $dep_css, '1.0' );
 		wp_enqueue_script( 'home-js', "$path/js/home.vmc.min.js", $dep_js, '1.0', true );
