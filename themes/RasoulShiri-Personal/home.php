@@ -439,7 +439,7 @@ $path = get_template_directory_uri() . '/assets';
                              src="<?php echo $path; ?>/securimage/securimage_show.php" alt="CAPTCHA Image"/>
                     </a>
                     <input type="text" name="captcha_code" size="10" maxlength="8" id="captcha-input"
-                           aria-label="<?php _e( 'CAPTCHA', VM_TD ); ?>"/>
+                           aria-label="CAPTCHA" tabindex="1"/>
 					<?php
 					//TODO: add no-script contact information images.
 					?>
@@ -447,7 +447,7 @@ $path = get_template_directory_uri() . '/assets';
                            value="<?php _ex( 'Done', 'Submit button text', VM_TD ); ?>"/>
                 </form>
                 <p class="tier-text contact-info">
-                    <a href="https://www.instagram.com/shirirasool">
+                    <a href="https://www.instagram.com/shirirasool" target="_blank">
                         <span class="vm-icon vmi-instagram"></span>
                     </a>
                 </p>

@@ -21,7 +21,7 @@ else :
 	</a>
 </p>
 <p class="tier-text contact-info">
-	<a href="tel:+989199209012">
+	<a href="tel:+989199209012" target="_top">
 		<span class="vm-icon vmi-phone2"></span><span>+989199209012</span>
 	</a>
 </p>

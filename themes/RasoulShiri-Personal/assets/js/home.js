@@ -7,6 +7,7 @@ jQuery(function ($) {
         e.preventDefault();
         $form.animate({maxHeight: '100vh'}, 300, 'swing');
         $(this).hide(300);
+        $('#captcha-input', $form).focus();
     });
 
     $('#reload-captcha').on('click', function (e) {
