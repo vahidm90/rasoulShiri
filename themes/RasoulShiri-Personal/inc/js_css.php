@@ -176,6 +176,7 @@ function front_page_inline_js() {
 
 	?>
     <script>
+        var $form = $('#contact-captcha');
         function reloadCaptcha() {
             $('#captcha-img').prop(
                 'src', '<?php echo $path; ?>/assets/securimage/securimage_show.php?sid=' + Math.random()
@@ -186,18 +187,18 @@ function front_page_inline_js() {
             $.ajax({
                 url: '<?php echo $path; ?>/inc/contact-captcha.php',
                 type: 'post',
-                data: $('#contact-captcha').serialize(),
+                data: $form.serialize(),
                 dataType: 'json',
                 error: function () {
                     var $input = $('#captcha-input');
                     $input.val('');
+                    $('.text-danger', $form).remove();
                     $input.before('<span class="text-danger"><?php _e( 'Invalid code', VM_TD ); ?></span>');
                     reloadCaptcha();
-
                 }
             }).done(function (content) {
                 $('#contact .tier-head').after(content);
-                $('#contact-captcha').hide(300);
+                $form.hide(300);
             });
 
             return false;
