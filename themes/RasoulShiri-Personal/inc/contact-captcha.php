@@ -17,12 +17,12 @@ else :
 	$content = <<<html
 <p class="tier-text contact-info">
 	<a href="mailto:rasoolshiri.r@gmail.com" target="_blank">
-		<span class="vm-icon vmi-envelope"></span><span class="contact-email">rasoolshiri.r@gmail.com</span>
+		<span class="vm-icon vmi-envelope"></span><span>rasoolshiri.r@gmail.com</span>
 	</a>
 </p>
 <p class="tier-text contact-info">
 	<a href="tel:+989199209012">
-		<span class="vm-icon vmi-phone2"></span><span class="contact-phone">+989199209012</span>
+		<span class="vm-icon vmi-phone2"></span><span>+989199209012</span>
 	</a>
 </p>
 html;

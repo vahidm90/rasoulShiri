@@ -2,24 +2,31 @@
 
 get_header( 'home' );
 
-$path = get_template_directory_uri();
+$path = get_template_directory_uri() . '/assets';
 
 ?>
     <nav id="dynamic-nav" class="navbar d-none d-lg-flex" data-aos="fade-left">
         <div class="nav-container">
-            <a class="vm-icon vmi-radio-unchecked nav-link" title="Home" href="#home"></a>
-            <a class="vm-icon vmi-radio-unchecked nav-link" title="Animation" href="#animation"></a>
-            <a class="vm-icon vmi-radio-unchecked nav-link" title="Sketch" href="#sketch"></a>
-            <a class="vm-icon vmi-radio-unchecked nav-link" title="Character Design" href="#char-design"></a>
-            <a class="vm-icon vmi-radio-unchecked nav-link" title="Short Animation" href="#short-animation"></a>
-            <a class="vm-icon vmi-radio-unchecked nav-link" title="About" href="#about"></a>
-            <a class="vm-icon vmi-radio-unchecked nav-link" title="Contact" href="#contact"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Home" href="#home"
+            data-tippy-content="Home"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Animation" href="#animation"
+            data-tippy-content="Animation"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Sketch" href="#sketch"
+            data-tippy-content="Sketch"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Character Design" href="#char-design"
+            data-tippy-content="Character Design"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Short Animation" href="#short-animation"
+            data-tippy-content="Short Animation"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="About" href="#about"
+            data-tippy-content="About"></a>
+            <a class="vm-icon vmi-radio-unchecked nav-link" title="Contact" href="#contact"
+            data-tippy-content="Contact"></a>
         </div>
     </nav>
     <div class="tier" id="home">
         <div class="tier-img-div h-100 w-100">
-            <img src="<?php echo $path; ?>/assets/bin/img/home-left.png" id="home-left-img" data-aos="fade-right"/>
-            <img src="<?php echo $path; ?>/assets/bin/img/home-right.png" id="home-right-img" data-aos="fade-left"/>
+            <img src="<?php echo $path; ?>/bin/img/home-left.png" id="home-left-img" data-aos="fade-right"/>
+            <img src="<?php echo $path; ?>/bin/img/home-right.png" id="home-right-img" data-aos="fade-left"/>
         </div>
         <div class="text-center tier-content">
             <h1 class="tier-head" data-aos="fade-down">
@@ -85,7 +92,7 @@ $path = get_template_directory_uri();
                            title="<?php _ex( 'TV Series', 'Tier item', VM_TD ); ?>">
                             <div class="tier-item card" data-aos="flip-right">
                                 <img class="card-img-top"
-                                     src="<?php echo $path; ?>/assets/bin/img/portfolio-image_09.jpg"
+                                     src="<?php echo $path; ?>/bin/img/portfolio-image_09.jpg"
                                      alt="<?php _ex( 'TV Series', 'Tier item', VM_TD ); ?>">
                                 <div class="card-body">
                                     <h3 class="card-title"><?php _ex( 'TV Series', 'Tier item', VM_TD ); ?></h3>
@@ -99,7 +106,7 @@ $path = get_template_directory_uri();
                            title="<?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?>">
                             <div class="tier-item card" data-aos="flip-right">
                                 <img class="card-img-top"
-                                     src="<?php echo $path; ?>/assets/bin/img/portfolio-image_03.jpg"
+                                     src="<?php echo $path; ?>/bin/img/portfolio-image_03.jpg"
                                      alt="<?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?>">
                                 <div class="card-body">
                                     <h3 class="card-title"><?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?></h3>
@@ -113,7 +120,7 @@ $path = get_template_directory_uri();
                            title="<?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?>">
                             <div class="tier-item card" data-aos="flip-right">
                                 <img class="card-img-top"
-                                     src="<?php echo $path; ?>/assets/bin/img/portfolio-image_01.jpg"
+                                     src="<?php echo $path; ?>/bin/img/portfolio-image_01.jpg"
                                      alt="<?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?>">
                                 <div class="card-body">
                                     <h3 class="card-title"><?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?></h3>
@@ -137,7 +144,7 @@ $path = get_template_directory_uri();
                                title="<?php _ex( 'TV Series', 'Tier item', VM_TD ); ?>">
                                 <div class="tier-item card">
                                     <img class="card-img-top"
-                                         src="<?php echo $path; ?>/assets/bin/img/portfolio-image_09.jpg"
+                                         src="<?php echo $path; ?>/bin/img/portfolio-image_09.jpg"
                                          alt="<?php _ex( 'TV Series', 'Tier item', VM_TD ); ?>">
                                     <div class="card-body">
                                         <h3 class="card-title"><?php _ex( 'TV Series', 'Tier item', VM_TD ); ?></h3>
@@ -151,7 +158,7 @@ $path = get_template_directory_uri();
                                title="<?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?>">
                                 <div class="tier-item card">
                                     <img class="card-img-top"
-                                         src="<?php echo $path; ?>/assets/bin/img/portfolio-image_03.jpg"
+                                         src="<?php echo $path; ?>/bin/img/portfolio-image_03.jpg"
                                          alt="<?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?>">
                                     <div class="card-body">
                                         <h3 class="card-title"><?php _ex( 'Animated Short Series', 'Tier item', VM_TD ); ?></h3>
@@ -165,7 +172,7 @@ $path = get_template_directory_uri();
                                title="<?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?>">
                                 <div class="tier-item card">
                                     <img class="card-img-top"
-                                         src="<?php echo $path; ?>/assets/bin/img/portfolio-image_01.jpg"
+                                         src="<?php echo $path; ?>/bin/img/portfolio-image_01.jpg"
                                          alt="<?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?>">
                                     <div class="card-body">
                                         <h3 class="card-title"><?php _ex( 'TV Commercials', 'Tier item', VM_TD ); ?></h3>
@@ -188,19 +195,19 @@ $path = get_template_directory_uri();
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="card tier-item" data-aos="flip-left">
-                            <img src="<?php echo $path; ?>/assets/bin/img/sketch01.png"
+                            <img src="<?php echo $path; ?>/bin/img/sketch01.png"
                                  class="my-lg-auto d-block w-100">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card tier-item" data-aos="flip-left">
-                            <img src="<?php echo $path; ?>/assets/bin/img/sketch02.png"
+                            <img src="<?php echo $path; ?>/bin/img/sketch02.png"
                                  class="my-lg-auto d-block w-100">
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card tier-item" data-aos="flip-left">
-                            <img src="<?php echo $path; ?>/assets/bin/img/sketch03.png"
+                            <img src="<?php echo $path; ?>/bin/img/sketch03.png"
                                  class="my-lg-auto d-block w-100">
                         </div>
                     </div>
@@ -214,19 +221,19 @@ $path = get_template_directory_uri();
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="card tier-item">
-                                <img src="<?php echo $path; ?>/assets/bin/img/sketch01.png"
+                                <img src="<?php echo $path; ?>/bin/img/sketch01.png"
                                      class="my-lg-auto d-block w-100">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="card tier-item">
-                                <img src="<?php echo $path; ?>/assets/bin/img/sketch02.png"
+                                <img src="<?php echo $path; ?>/bin/img/sketch02.png"
                                      class="my-lg-auto d-block w-100">
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="card tier-item">
-                                <img src="<?php echo $path; ?>/assets/bin/img/sketch03.png"
+                                <img src="<?php echo $path; ?>/bin/img/sketch03.png"
                                      class="my-lg-auto d-block w-100">
                             </div>
                         </div>
@@ -243,11 +250,11 @@ $path = get_template_directory_uri();
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="<?php echo $path; ?>/assets/bin/img/char-design01.png" class="w-100"
+                        <img src="<?php echo $path; ?>/bin/img/char-design01.png" class="w-100"
                              data-aos="zoom-in">
                     </div>
                     <div class="col-lg-6">
-                        <img src="<?php echo $path; ?>/assets/bin/img/char-design02.png" class="w-100"
+                        <img src="<?php echo $path; ?>/bin/img/char-design02.png" class="w-100"
                              data-aos="zoom-in-up">
                     </div>
                 </div>
@@ -259,10 +266,10 @@ $path = get_template_directory_uri();
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
-                            <img src="<?php echo $path; ?>/assets/bin/img/char-design01.png" class="w-100">
+                            <img src="<?php echo $path; ?>/bin/img/char-design01.png" class="w-100">
                         </div>
                         <div class="col-lg-6">
-                            <img src="<?php echo $path; ?>/assets/bin/img/char-design02.png" class="w-100">
+                            <img src="<?php echo $path; ?>/bin/img/char-design02.png" class="w-100">
                         </div>
                     </div>
                 </div>
@@ -274,14 +281,14 @@ $path = get_template_directory_uri();
             <div class="row">
                 <div class="col-12">
                     <h2 class="tier-head">
-				        <?php _ex( 'Short Animation', 'Tier title', VM_TD ); ?>
+						<?php _ex( 'Short Animation', 'Tier title', VM_TD ); ?>
                     </h2>
                 </div>
             </div>
             <noscript>
                 <div class="row">
                     <div class="col-12 col-md-6 col-xl-3">
-                        <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_12.jpg" class="d-block w-100"
+                        <img src="<?php echo $path; ?>/bin/img/portfolio-image_12.jpg" class="d-block w-100"
                              alt="Gabbeh by Rasoul Shiri">
                         <div class="carousel-caption">
                             <h3 class="tier-text title">Gabbeh</h3>
@@ -292,7 +299,7 @@ $path = get_template_directory_uri();
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-3">
-                        <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_07.jpg" class="d-block w-100"
+                        <img src="<?php echo $path; ?>/bin/img/portfolio-image_07.jpg" class="d-block w-100"
                              alt="The Shadow by Rasoul Shiri">
                         <div class="carousel-caption">
                             <h3 class="tier-text title">The Shadow</h3>
@@ -303,7 +310,7 @@ $path = get_template_directory_uri();
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-3">
-                        <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_16.jpg" class="d-block w-100"
+                        <img src="<?php echo $path; ?>/bin/img/portfolio-image_16.jpg" class="d-block w-100"
                              alt="Contrast by Rasoul Shiri">
                         <div class="carousel-caption">
                             <h3 class="tier-text title">Contrast</h3>
@@ -314,7 +321,7 @@ $path = get_template_directory_uri();
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-xl-3">
-                        <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_17.jpg" class="d-block w-100"
+                        <img src="<?php echo $path; ?>/bin/img/portfolio-image_17.jpg" class="d-block w-100"
                              alt="Fifty-Fifty by Rasoul Shiri">
                         <div class="carousel-caption">
                             <h3 class="tier-text title">Fifty-Fifty</h3>
@@ -335,7 +342,7 @@ $path = get_template_directory_uri();
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_12.jpg" class="d-block w-100"
+                        <img src="<?php echo $path; ?>/bin/img/portfolio-image_12.jpg" class="d-block w-100"
                              alt="Gabbeh by Rasoul Shiri">
                         <div class="carousel-caption">
                             <h3 class="tier-text title">Gabbeh</h3>
@@ -346,7 +353,7 @@ $path = get_template_directory_uri();
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_07.jpg" class="d-block w-100"
+                        <img src="<?php echo $path; ?>/bin/img/portfolio-image_07.jpg" class="d-block w-100"
                              alt="The Shadow by Rasoul Shiri">
                         <div class="carousel-caption">
                             <h3 class="tier-text title">The Shadow</h3>
@@ -357,7 +364,7 @@ $path = get_template_directory_uri();
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_16.jpg" class="d-block w-100"
+                        <img src="<?php echo $path; ?>/bin/img/portfolio-image_16.jpg" class="d-block w-100"
                              alt="Contrast by Rasoul Shiri">
                         <div class="carousel-caption">
                             <h3 class="tier-text title">Contrast</h3>
@@ -368,7 +375,7 @@ $path = get_template_directory_uri();
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?php echo $path; ?>/assets/bin/img/portfolio-image_17.jpg" class="d-block w-100"
+                        <img src="<?php echo $path; ?>/bin/img/portfolio-image_17.jpg" class="d-block w-100"
                              alt="Fifty-Fifty by Rasoul Shiri">
                         <div class="carousel-caption">
                             <h3 class="tier-text title">Fifty-Fifty</h3>
@@ -422,20 +429,26 @@ $path = get_template_directory_uri();
                 <h2 class="tier-head">
 					<?php _ex( 'Contact', 'Tier title', VM_TD ); ?>
                 </h2>
-                <form id="contact_captcha" method="post" onsubmit="return processForm()" action="">
-                    <img id="captcha" src="<?php echo $path; ?>/assets/securimage/securimage_show.php"
-                         alt="CAPTCHA Image"/>
-                    <input type="text" name="captcha_code" size="10" maxlength="8" id="captcha_code"/>
-                    <a href="#" onclick="document.getElementById('captcha').src = '<?php echo $path; ?>/assets/securimage/securimage_show.php?' + Math.random(); return false">[Different Image ]</a>
+                <p class="tier-text" id="show-contact-captcha">
+                    <a href="#"><?php _e( 'Phone and Email', VM_TD ); ?></a>
+                </p>
+                <form id="contact-captcha" method="post" onsubmit="return processForm()" action="" autocomplete="off">
+                    <a href="#" id="reload-captcha" role="button">
+                        <span class="sr-only"><?php _e( 'Reload CAPTCHA Image', VM_TD ); ?></span>
+                        <img id="captcha-img"
+                             src="<?php echo $path; ?>/securimage/securimage_show.php" alt="CAPTCHA Image"/>
+                    </a>
+                    <input type="text" name="captcha_code" size="10" maxlength="8" id="captcha-input"
+                           aria-label="<?php _e( 'CAPTCHA', VM_TD ); ?>"/>
 					<?php
-                    //TODO: add icon/translatable strings for captcha image change button.
 					//TODO: add no-script contact information images.
 					?>
-                    <input type="submit" value="<?php _ex( 'Done', 'Submit button text', VM_TD ); ?>"/>
+                    <input type="submit" class="btn btn-primary"
+                           value="<?php _ex( 'Done', 'Submit button text', VM_TD ); ?>"/>
                 </form>
                 <p class="tier-text contact-info">
                     <a href="https://www.instagram.com/shirirasool">
-                        <span class="vm-icon vmi-instagram"></span><span class="contact-insta">shirirasool</span>
+                        <span class="vm-icon vmi-instagram"></span>
                     </a>
                 </p>
             </div>
@@ -444,7 +457,8 @@ $path = get_template_directory_uri();
 <?php
 get_footer( 'home' );
 
-
+//TODO: make all literal strings translatable.
+//TODO: add zip-style connectors for tiers.
 //TODO: create custom options page to set background images, number of front-page tiers, their names, IDs, etc.
 //TODO: create options to set site owner info.
 //TODO: create options to set whether to show contact/about page.

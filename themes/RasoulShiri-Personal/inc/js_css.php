@@ -30,16 +30,10 @@ function vm_load_dev_css_js() {
 	$path    = get_template_directory_uri() . '/assets';
 	$dep_css = $dep_js = array();
 
-	wp_enqueue_script( 'jquery-js', "$path/js/jquery-3.4.1.min.js", array(), '3.4.1' );
+	wp_enqueue_script( 'jquery-js', "$path/js/jquery-3.4.1.min.js", $dep_js, '3.4.1' );
 	$dep_js [] = 'jquery-js';
 
-	wp_enqueue_script( 'popper-js', "$path/js/popper-2.0.0.min.js", $dep_js, '2.0.0', true );
-	$dep_js [] = 'popper-js';
-
-	wp_enqueue_script( 'tippy-js', "$path/js/tippy-5.1.4-bundle.iife.min.js", $dep_js, '5.1.4', true );
-	$dep_js [] = 'tippy-js';
-
-	wp_enqueue_style( 'bootstrap', "$path/bootstrap-4.4.1-dist/bootstrap.min.css", array(), '4.4.1' );
+	wp_enqueue_style( 'bootstrap', "$path/bootstrap-4.4.1-dist/bootstrap.min.css", $dep_css, '4.4.1' );
 	$dep_css [] = 'bootstrap';
 
 	wp_enqueue_script( 'bootstrap-js', "$path/bootstrap-4.4.1-dist/bootstrap.min.js", $dep_js, '4.4.1', true );
@@ -49,6 +43,15 @@ function vm_load_dev_css_js() {
 	wp_enqueue_style( 'basic', "$path/css/basic.css", $dep_css, '1.0' );
 
 	if ( is_home() ) :
+
+		wp_enqueue_script( 'popper-js', 'https://unpkg.com/popper.js@1', $dep_js, '1.16.1', true );
+		$dep_js [] = 'popper-js';
+
+		wp_enqueue_style( 'tippy-animation', 'https://unpkg.com/tippy.js@5.2.0/animations/perspective-extreme.css', $dep_css, '5.2.0' );
+		$dep_css [] = 'tippy-animation';
+
+		wp_enqueue_script( 'tippy-js', 'https://unpkg.com/tippy.js@5', $dep_js, '5.2.0', true );
+		$dep_js [] = 'tippy-js';
 
 		wp_enqueue_style( 'aos', "$path/aos-2.3.4/aos.min.css", $dep_css, '2.3.4' );
 		$dep_css [] = 'aos';
@@ -97,14 +100,8 @@ function vm_load_production_css_js() {
 	add_filter( 'script_loader_tag', 'vm_add_sri_attributes', 10, 2 );
 	add_filter( 'style_loader_tag', 'vm_add_sri_attributes', 10, 2 );
 
-	wp_enqueue_script( 'jquery-js', 'https://lib.arvancloud.com/ar/jquery/3.4.1/jquery.min.js', array(), '3.4.1' );
+	wp_enqueue_script( 'jquery-js', 'https://lib.arvancloud.com/ar/jquery/3.4.1/jquery.min.js', $dep_js, '3.4.1' );
 	$dep_js [] = 'jquery-js';
-
-	wp_enqueue_script( 'popper-js', "$path/js/popper-2.0.0.min.js", $dep_js, '2.0.0', true );
-	$dep_js [] = 'popper-js';
-
-	wp_enqueue_script( 'tippy-js', "$path/js/tippy-5.1.4-bundle.iife.min.js", $dep_js, '5.1.4', true );
-	$dep_js [] = 'tippy-js';
 
 	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css', array(), '4.4.1' );
 	$dep_css [] = 'bootstrap';
@@ -116,6 +113,15 @@ function vm_load_production_css_js() {
 	wp_enqueue_style( 'basic', "$path/css/basic.vmc.min .css", $dep_css, '1.0' );
 
 	if ( is_home() ) :
+
+		wp_enqueue_script( 'popper-js', 'https://unpkg.com/popper.js@1', $dep_js, '1.16.1', true );
+		$dep_js [] = 'popper-js';
+
+		wp_enqueue_style( 'tippy-animation', 'https://unpkg.com/tippy.js@5.2.0/animations/perspective-extreme.css', $dep_css, '5.2.0' );
+		$dep_css [] = 'tippy-animation';
+
+		wp_enqueue_script( 'tippy-js', 'https://unpkg.com/tippy.js@5', $dep_js, '5.2.0', true );
+		$dep_js [] = 'tippy-js';
 
 		wp_enqueue_style( 'aos', 'https://lib.arvancloud.com/ar/aos/2.3.4/aos.css', $dep_css, '2.3.4' );
 		$dep_css = 'aos';
@@ -180,23 +186,27 @@ function front_page_inline_js() {
 	?>
     <script>
         function reloadCaptcha() {
-            $('#contact_captcha #captcha').prop('src', '<?php echo $path; ?>/assets/securimage/securimage_show.php?sid=' + Math.random());
+            $('#captcha-img').prop(
+                'src', '<?php echo $path; ?>/assets/securimage/securimage_show.php?sid=' + Math.random()
+            );
         }
 
         function processForm() {
             $.ajax({
                 url: '<?php echo $path; ?>/inc/contact-captcha.php',
                 type: 'post',
-                data: $('#contact_captcha').serialize(),
+                data: $('#contact-captcha').serialize(),
                 dataType: 'json',
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert('<?php _ex( 'Try Again!', 'Captcha error', VM_TD ); ?>');
-                    $('#captcha_code').val('');
+                error: function () {
+                    var $input = $('#captcha-input');
+                    $input.val('');
+                    $input.before('<span class="text-danger"><?php _e( 'Invalid code', VM_TD ); ?></span>');
                     reloadCaptcha();
 
                 }
             }).done(function (content) {
                 $('#contact .tier-head').after(content);
+                $('#contact-captcha').hide(300);
             });
 
             return false;

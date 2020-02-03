@@ -1,8 +1,25 @@
 jQuery(function ($) {
+
+    var $form = $('#contact-captcha');
+    $form.css('max-height', 0);
+
+    $('#show-contact-captcha').on('click', function (e) {
+        e.preventDefault();
+        $form.animate({maxHeight: '100vh'}, 300, 'swing');
+        $(this).hide(300);
+    });
+
+    $('#reload-captcha').on('click', function (e) {
+        e.preventDefault();
+        reloadCaptcha();
+    });
+
     // Enable smooth scrolling
-    $('a[href*="#"]:not([href="#"]):not([href^="#tab"]):not([href^="#collapse"])').click(function ()
-    {
-        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') || location.hostname === this.hostname) {
+    $('a[href*="#"]:not([href="#"]):not([href^="#tab"]):not([href^="#collapse"])').click(function () {
+        if (
+            (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')) ||
+            (location.hostname === this.hostname)
+        ) {
             var target = $(this.hash);
             if (target.length) {
                 if ('top-bar-items' === $(this).parent().attr('id'))
@@ -13,21 +30,18 @@ jQuery(function ($) {
     });
 
     // Enable tooltips for navigation radio buttons
-    // TODO: adjust the code to the new tippy.js.
-/*
-    var $navItems = $('#dynamic-nav .nav-link');
-    $navItems.each(function () {
-        var myTooltip = new Tooltip($(this), {
-            placement: "left",
-            delay: {show: 0, hide: 100},
-            title: $(this).attr('title'),
-            trigger: 'hover focus click',
-            template: '<div class="vm-tooltip nav-tooltip"><div class="tooltip-arrow"></div><div class="tooltip-txt"></div></div>',
-            innerSelector: '.tooltip-txt'
-        });
-    });
-*/
+    tippy(
+        '[data-tippy-content]',
+        {
+            animation: 'perspective-extreme',
+            placement: 'left',
+            trigger: 'mouseenter focus click active',
+            inertia: true,
+        }
+    );
+
 });
+
 $(window).on('scroll', function (e) {
     var $topBar = $('#static-top-bar');
     if (e.currentTarget.innerHeight < e.currentTarget.scrollY)
