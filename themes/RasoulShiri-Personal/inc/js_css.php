@@ -110,7 +110,7 @@ function vm_load_production_css_js() {
 	$dep_js [] = 'bootstrap-js';
 
 
-	wp_enqueue_style( 'basic', "$path/css/basic.vmc.min .css", $dep_css, '1.0' );
+	wp_enqueue_style( 'basic', "$path/css/basic.vmc.min.css", $dep_css, '1.0' );
 
 	if ( is_home() ) :
 
