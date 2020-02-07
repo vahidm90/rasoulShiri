@@ -1,9 +1,9 @@
 # Exclusive Folders #
 /languages/**
+/uploads/**
 
 # Folders #
 **/bin/**
-**/uploads/**
 
 # Compiled source #
 *.vmc.*
