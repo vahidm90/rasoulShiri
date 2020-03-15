@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2020 at 11:35 PM
+-- Generation Time: Mar 16, 2020 at 12:09 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `rasouls1_pws`
 --
+CREATE DATABASE IF NOT EXISTS `rasouls1_pws` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `rasouls1_pws`;
 
 -- --------------------------------------------------------
 
